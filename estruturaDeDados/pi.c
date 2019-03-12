@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-float pi(int n);
+void pi(int n, float *res);
 int main(){
 	
 	int n;
@@ -8,22 +8,22 @@ int main(){
 
 	scanf("%d", &n);
 	
-	res=pi(n);
+	pi(n, &res);
 	
 	printf("%.10f\n", res);
 	
 	return 0;
 }
-float pi(int n){
-	float res, temp=1;
+void pi(int n, float *res){
+	float temp=1.0;
 	int i;
 	
 	for(i=1;i<=n;i++){
 		
-		temp=temp+pow(-1,i)/(2*i+1);
+		temp=temp+pow(-1,i)/(2.0*i+1.0);
 		
 	}
-	res=4*temp;
+	
+	*res=4.0*temp;
 
-	return res;
 }

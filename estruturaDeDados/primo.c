@@ -1,5 +1,5 @@
 #include <stdio.h>
-int primo(int);
+void primo(int, int*);
 int main(){
 	
 	int n, resultado=0;
@@ -8,7 +8,7 @@ int main(){
 		scanf("%d", &n);
 	}while(n>10000000);
 	
-	resultado=primo(n);
+	primo(n, &resultado);
 	
 	if(resultado==0 && n!=1){
 		printf("PRIMO\n");
@@ -18,16 +18,15 @@ int main(){
 	
 	return 0;
 }
-int primo(int n){
+void primo(int n, int *resultado){
 	
-	int i, res=0;
+	int i;
 	
 	for (i=2;i<=n/2;i++) {
     	if (n % i == 0) {
-       		res++;
+       		*resultado=*resultado+1;
        		break;
     	}
  	}
 	
-	return res;
 }
