@@ -29,7 +29,5 @@ void raizes(float a, float b, float c, float *x1, float *x2){
 		*x1 = ((-b) + sqrt(delta)) / (2.0*a);
  		*x2 = ((-b) - sqrt(delta)) / (2.0*a);
 	}
-
 	return;
 }
-

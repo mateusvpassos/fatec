@@ -1,32 +1,31 @@
 #include<stdio.h>
-int fibonacci(int);
+void fibonacci(unsigned long long int, unsigned long long int *);
 int main(){
 	
-	int n, res;
-	do{
-		scanf("%d", &n);	
-	}while(n<=0 || n>10000);
+	unsigned long long int n, res=1;
 	
+	scanf("%lld", &n);	
 	
-	res=fibonacci(n);
+	fibonacci(n, &res);
 
-	printf("%d", res);
+	printf("%lld", res);
 	
 }
-int fibonacci(int n) {
-    int ant = 1, prox = 1, temp, i;
+void fibonacci(unsigned long long int n, unsigned long long int *res) {
+    unsigned long long int ant = 1, temp, i;
  
     if(n == 1) {
-        return 1;
+        *res=1;
     } else if(n == 2) {
-        return 1;
+        *res=1;
+    }else if(n == 0) {
+        *res=0;
     } else {
         for(i = 3; i <= n; i++) {
-            temp = prox;
-            prox = ant + prox;
+            temp = *res;
+            *res = ant + (*res);
             ant = temp;
         }
-        return prox;
     }
 }
 
