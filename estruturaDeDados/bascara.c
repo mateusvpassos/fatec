@@ -13,7 +13,7 @@ int main(){
 	if(x1!=0 && x2!=0){
 		printf("%.2f %.2f\n", x1, x2);
 	}else{
-		printf("NARN\n");
+		printf("NARN");
 	}
 	
 }
