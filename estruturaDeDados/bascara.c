@@ -11,9 +11,9 @@ int main(){
 	raizes(a, b, c, &x1, &x2);
 	
 	if(x1!=0 && x2!=0){
-		printf("%.2f %.2f\n", x1, x2);
+		printf("%.2f\t%.2f\n", x1, x2);
 	}else{
-		printf("NARN");
+		printf("NARN\n");
 	}
 	
 }
